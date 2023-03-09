@@ -1,5 +1,6 @@
 package ait.ft42.lavanya.projects.hibernate.demo.Entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -16,23 +17,26 @@ public class Hosteller {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "roomNo")
+	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name = "room_id")
 	private Room room;
 	private String name;
 
-	public Hosteller(int id, Room room, String name) {
+	public Hosteller(Room room, String name) {
 		super();
-		this.id = id;
 		this.room = room;
 		this.name = name;
+	}
+	
+	public Hosteller() {
+		super();
 	}
 
 	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

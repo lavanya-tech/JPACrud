@@ -11,18 +11,20 @@ import jakarta.persistence.Table;
 public class Room {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long roomNo;
+    private long id;
     private int max_limit;
-	public Room(int id, int max_limit) {
+    public Room() {
 		super();
-		this.roomNo = id;
+	}
+	public Room(int max_limit) {
+		super();
 		this.max_limit = max_limit;
 	}
 	public long getId() {
-		return roomNo;
+		return id;
 	}
-	public void setId(int id) {
-		this.roomNo = id;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public int getMax_limit() {
 		return max_limit;
