@@ -31,6 +31,11 @@ public class StudentController {
 	    public Optional<Hosteller> getById(@PathVariable long id) {
 	        return studentService.getById(id);
 	    }
+	    
+	    @GetMapping("/room/{room_id}")
+	    public List<Hosteller> getStudents(@PathVariable long room_id){
+	    	return studentService.getStudents(room_id);
+	    }
 
 	    @PostMapping
 	    public void save(@RequestBody Hosteller hosteller) {

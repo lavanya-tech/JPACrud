@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ait.ft42.lavanya.projects.hibernate.demo.Entity.Hosteller;
 import ait.ft42.lavanya.projects.hibernate.demo.Entity.Room;
 import ait.ft42.lavanya.projects.hibernate.demo.Service.RoomService;
 
@@ -31,7 +32,7 @@ public class RoomController {
     public Optional<Room> getById(@PathVariable long id) {
         return roomService.getById(id);
     }
-    
+       
     @PostMapping
     public void save(@RequestBody Room room) {
         roomService.save(room);

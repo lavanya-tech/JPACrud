@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ait.ft42.lavanya.projects.hibernate.demo.Entity.Hosteller;
 import ait.ft42.lavanya.projects.hibernate.demo.Entity.Room;
 import ait.ft42.lavanya.projects.hibernate.demo.Repository.RoomRepository;
 @Service
@@ -29,5 +30,4 @@ public class RoomService {
 	public void delete(long id) {
 		roomrepository.deleteById(id);
 	}
-
 }
