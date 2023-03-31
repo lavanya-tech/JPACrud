@@ -11,8 +11,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "hostellers")
-public class Hosteller {
+@Table(name = "drafthostellers")
+public class DraftHosteller {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -21,34 +21,30 @@ public class Hosteller {
 	@JoinColumn(name = "room_id")
 	private Room room;
 	private String name;
-
-	public Hosteller(Room room, String name) {
+	public DraftHosteller(long id, Room room, String name) {
 		super();
+		this.id = id;
 		this.room = room;
 		this.name = name;
 	}
-	
-	public Hosteller() {
+	public DraftHosteller() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-
 	public long getId() {
 		return id;
 	}
-
 	public Room getRoom() {
 		return room;
 	}
-
 	public void setRoom(Room room) {
 		this.room = room;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 }

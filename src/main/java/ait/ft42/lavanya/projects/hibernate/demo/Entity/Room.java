@@ -23,9 +23,6 @@ public class Room {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
-		this.id = id;
-	}
 	public int getMax_limit() {
 		return max_limit;
 	}
